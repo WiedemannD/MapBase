@@ -4,7 +4,7 @@ MapBase
 
 **iOS native app starting point for map apps**
 
-The app is similar to what Magnus showed with his Flash variant: you can set hot spots on a map with a certain activity radius (currently the radius is not visual). If your position comes into the active space around a host spot a specified sound will play once.
+The app is similar to what Magnus showed with his Flash variant: you can set hot spots on a map with a certain activity radius (currently the radius is not visual). If your position comes into the active space around a hot spot a specified sound will play once.
 
 Currently you can just configure the app with two plist files (actually that's just XML) in the Resources directory.
 
