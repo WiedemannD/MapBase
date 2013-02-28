@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>startUpSetting</key>
+	<dict>
+		<key>lat</key>
+		<real>51.580003</real>
+		<key>lon</key>
+		<real>-0.198398</real>
+		<key>regionDistance</key>
+		<integer>1000</integer>
+	</dict>
+	<key>spots</key>
+	<array>
+		<dict>
+			<key>lat</key>
+			<real>51.580148</real>
+			<key>lon</key>
+			<real>-0.198923</real>
+			<key>radius</key>
+			<string>15</string>
+			<key>title</key>
+			<string>Spot number one</string>
+			<key>subtitle</key>
+			<string>This is a spot description la la and bla blub.</string>
+			<key>soundId</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>lat</key>
+			<real>51.57996</real>
+			<key>lon</key>
+			<real>-0.198816</real>
+			<key>radius</key>
+			<string>10</string>
+			<key>title</key>
+			<string>Spot number two</string>
+			<key>subtitle</key>
+			<string>This 2 is a spot description la la and bla blub.</string>
+			<key>soundId</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>lat</key>
+			<real>51.579585</real>
+			<key>lon</key>
+			<real>-0.198669</real>
+			<key>radius</key>
+			<string>20</string>
+			<key>title</key>
+			<string>Three spot</string>
+			<key>subtitle</key>
+			<string>This 3 is a spot description la la and bla blub.</string>
+			<key>soundId</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>lat</key>
+			<real>51.580023</real>
+			<key>lon</key>
+			<real>-0.198306</real>
+			<key>radius</key>
+			<string>20</string>
+			<key>title</key>
+			<string>Home</string>
+			<key>subtitle</key>
+			<string>This HOME is a spot description la la and bla blub.</string>
+			<key>soundId</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

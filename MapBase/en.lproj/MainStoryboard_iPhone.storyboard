@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-Rh-blq">
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="TjZ-Bg-vCR"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALy-vc-T2M">
+                                <items>
+                                    <barButtonItem title="Test Sound" id="33z-K8-tj4"/>
+                                    <barButtonItem title="Reset" id="sIn-5h-aqh"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qaH-Rh-blq" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="6GP-5o-xFY"/>
+                            <constraint firstItem="ALy-vc-T2M" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Dzo-Yp-N67"/>
+                            <constraint firstItem="qaH-Rh-blq" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Khn-UX-hr9"/>
+                            <constraint firstItem="ALy-vc-T2M" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="UA7-NV-T93"/>
+                            <constraint firstItem="ALy-vc-T2M" firstAttribute="top" secondItem="qaH-Rh-blq" secondAttribute="bottom" type="default" id="V0T-HF-e6a"/>
+                            <constraint firstItem="ALy-vc-T2M" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="o5V-0f-0Oo"/>
+                            <constraint firstItem="qaH-Rh-blq" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="rS0-wH-3aP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn1" destination="33z-K8-tj4" id="MpM-YI-FLi"/>
+                        <outlet property="btn2" destination="sIn-5h-aqh" id="sgn-16-5Vm"/>
+                        <outlet property="mapView" destination="qaH-Rh-blq" id="yQK-Bp-5Rg"/>
+                        <outlet property="toolbar" destination="ALy-vc-T2M" id="LqC-J8-btH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="36"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="btn1" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btn2" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
