@@ -16,9 +16,10 @@
 @property (nonatomic, readwrite, copy) NSString *title;
 @property (nonatomic, readwrite) int radius;
 @property (nonatomic, readwrite) int soundId;
-@property (nonatomic, readwrite) BOOL soundPlayed;
+@property (nonatomic, readwrite) int imageId;
+@property (nonatomic, readwrite) BOOL activated;
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title subtitle:(NSString *)subtitle radius:(int)radius soundId:(int)soundId;
+- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate title:(NSString *)title subtitle:(NSString *)subtitle radius:(int)radius soundId:(int)soundId imageId:(int)imageId;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 @end

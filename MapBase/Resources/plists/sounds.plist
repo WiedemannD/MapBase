@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>mating.mp3</string>
-	<string>singing2.mp3</string>
+	<string>hotSpotSound0.mp3</string>
+	<string>hotSpotSound1.mp3</string>
+	<string>hotSpotSound2.mp3</string>
+	<string>hotSpotSound3.mp3</string>
 </array>
 </plist>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3012" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -12,32 +12,63 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-Rh-blq">
+                            <button opaque="NO" autoresizesSubviews="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-QY-AJC">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="2" id="TjZ-Bg-vCR"/>
+                                    <action selector="hideImageLayer:" destination="2" eventType="touchDown" id="3di-u7-5YJ"/>
                                 </connections>
-                            </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALy-vc-T2M">
-                                <items>
-                                    <barButtonItem title="Test Sound" id="33z-K8-tj4"/>
-                                    <barButtonItem title="Reset" id="sIn-5h-aqh"/>
-                                </items>
-                            </toolbar>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahB-Vc-zIw">
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qaH-Rh-blq">
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="TjZ-Bg-vCR"/>
+                                        </connections>
+                                    </mapView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="ALy-vc-T2M">
+                                        <items>
+                                            <barButtonItem title="Test sound" id="33z-K8-tj4"/>
+                                            <barButtonItem title="Reset" id="sIn-5h-aqh"/>
+                                            <barButtonItem title="Last image" id="0z0-Ni-S2P"/>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qaH-Rh-blq" firstAttribute="leading" secondItem="ahB-Vc-zIw" secondAttribute="leading" type="default" id="7sg-ie-vua"/>
+                                    <constraint firstItem="ALy-vc-T2M" firstAttribute="leading" secondItem="ahB-Vc-zIw" secondAttribute="leading" type="default" id="AjI-PQ-hep"/>
+                                    <constraint firstItem="qaH-Rh-blq" firstAttribute="trailing" secondItem="ahB-Vc-zIw" secondAttribute="trailing" type="default" id="GiY-00-faD"/>
+                                    <constraint firstItem="ALy-vc-T2M" firstAttribute="bottom" secondItem="ahB-Vc-zIw" secondAttribute="bottom" type="default" id="K6o-0y-Ixw"/>
+                                    <constraint firstItem="ALy-vc-T2M" firstAttribute="top" secondItem="qaH-Rh-blq" secondAttribute="bottom" type="default" id="RmA-Nj-0wE"/>
+                                    <constraint firstItem="ALy-vc-T2M" firstAttribute="trailing" secondItem="ahB-Vc-zIw" secondAttribute="trailing" type="default" id="ZlD-90-5Cb"/>
+                                    <constraint firstItem="qaH-Rh-blq" firstAttribute="top" secondItem="ahB-Vc-zIw" secondAttribute="top" type="default" id="syM-G8-exR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qaH-Rh-blq" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="6GP-5o-xFY"/>
-                            <constraint firstItem="ALy-vc-T2M" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Dzo-Yp-N67"/>
-                            <constraint firstItem="qaH-Rh-blq" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Khn-UX-hr9"/>
-                            <constraint firstItem="ALy-vc-T2M" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="UA7-NV-T93"/>
-                            <constraint firstItem="ALy-vc-T2M" firstAttribute="top" secondItem="qaH-Rh-blq" secondAttribute="bottom" type="default" id="V0T-HF-e6a"/>
-                            <constraint firstItem="ALy-vc-T2M" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="o5V-0f-0Oo"/>
-                            <constraint firstItem="qaH-Rh-blq" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="rS0-wH-3aP"/>
+                            <constraint firstItem="Jh1-QY-AJC" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="BLL-RZ-xgv"/>
+                            <constraint firstItem="ahB-Vc-zIw" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DjK-t5-aqm"/>
+                            <constraint firstItem="ahB-Vc-zIw" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="OOk-uY-Ax7"/>
+                            <constraint firstItem="Jh1-QY-AJC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="WqN-2s-uhz"/>
+                            <constraint firstItem="ahB-Vc-zIw" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="XyK-BG-0Lf"/>
+                            <constraint firstItem="Jh1-QY-AJC" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="r5b-98-F7P"/>
+                            <constraint firstItem="Jh1-QY-AJC" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="tZg-Ua-F9M"/>
+                            <constraint firstItem="ahB-Vc-zIw" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="u5Z-J9-RzZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btn1" destination="33z-K8-tj4" id="MpM-YI-FLi"/>
                         <outlet property="btn2" destination="sIn-5h-aqh" id="sgn-16-5Vm"/>
+                        <outlet property="btn3" destination="0z0-Ni-S2P" id="IXG-DE-eOg"/>
+                        <outlet property="imageLayer" destination="Jh1-QY-AJC" id="q3N-Yr-w5P"/>
                         <outlet property="mapView" destination="qaH-Rh-blq" id="yQK-Bp-5Rg"/>
                         <outlet property="toolbar" destination="ALy-vc-T2M" id="LqC-J8-btH"/>
                     </connections>
@@ -54,8 +85,11 @@
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
+                <relationship kind="action" name="hideImageLayer:"/>
                 <relationship kind="outlet" name="btn1" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="btn2" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btn3" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="imageLayer" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>

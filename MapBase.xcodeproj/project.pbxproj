@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB88F615170064580060A215 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB88F614170064580060A215 /* images.plist */; };
+		DB88F6181700741C0060A215 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DB88F6171700741C0060A215 /* Icon.png */; };
+		DB88F61A170074210060A215 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB88F619170074210060A215 /* Icon@2x.png */; };
+		DB88F61F170079150060A215 /* hotSpotImage0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB88F61B170079150060A215 /* hotSpotImage0.jpg */; };
+		DB88F620170079150060A215 /* hotSpotImage1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB88F61C170079150060A215 /* hotSpotImage1.jpg */; };
+		DB88F621170079150060A215 /* hotSpotImage2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB88F61D170079150060A215 /* hotSpotImage2.jpg */; };
+		DB88F622170079150060A215 /* hotSpotImage3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DB88F61E170079150060A215 /* hotSpotImage3.jpg */; };
+		DB88F62A17008CD80060A215 /* testHotSpot0.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62617008CD80060A215 /* testHotSpot0.gpx */; };
+		DB88F62B17008CD80060A215 /* testHotSpot1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62717008CD80060A215 /* testHotSpot1.gpx */; };
+		DB88F62C17008CD80060A215 /* testHotSpot2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62817008CD80060A215 /* testHotSpot2.gpx */; };
+		DB88F62D17008CD80060A215 /* testHotSpot3.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62917008CD80060A215 /* testHotSpot3.gpx */; };
+		DB88F632170090370060A215 /* hotSpotSound0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62E170090370060A215 /* hotSpotSound0.mp3 */; };
+		DB88F633170090370060A215 /* hotSpotSound1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB88F62F170090370060A215 /* hotSpotSound1.mp3 */; };
+		DB88F634170090370060A215 /* hotSpotSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB88F630170090370060A215 /* hotSpotSound2.mp3 */; };
+		DB88F635170090370060A215 /* hotSpotSound3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB88F631170090370060A215 /* hotSpotSound3.mp3 */; };
 		DB8C916416DFD2EE003EC912 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8C916216DFD2E2003EC912 /* CoreLocation.framework */; };
 		DB947BB116DE883A001F6687 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB947BB016DE883A001F6687 /* UIKit.framework */; };
 		DB947BB316DE883A001F6687 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB947BB216DE883A001F6687 /* Foundation.framework */; };
@@ -25,12 +40,25 @@
 		DB947BDE16DF8203001F6687 /* sounds.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB947BDD16DF8203001F6687 /* sounds.plist */; };
 		DB947BE616DF8BEF001F6687 /* AudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB947BE516DF8BEF001F6687 /* AudioPlayer.m */; };
 		DB947BE916DF8D3C001F6687 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB947BE716DF8D35001F6687 /* AVFoundation.framework */; };
-		DB947BEC16DF8DC9001F6687 /* mating.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB947BEA16DF8DC9001F6687 /* mating.mp3 */; };
-		DB947BED16DF8DC9001F6687 /* singing2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DB947BEB16DF8DC9001F6687 /* singing2.mp3 */; };
 		DB947BF416DFC035001F6687 /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DB947BF316DFC035001F6687 /* MapAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB88F614170064580060A215 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = images.plist; path = Resources/plists/images.plist; sourceTree = "<group>"; };
+		DB88F6171700741C0060A215 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		DB88F619170074210060A215 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		DB88F61B170079150060A215 /* hotSpotImage0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hotSpotImage0.jpg; path = Resources/images/hotSpotImage0.jpg; sourceTree = "<group>"; };
+		DB88F61C170079150060A215 /* hotSpotImage1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hotSpotImage1.jpg; path = Resources/images/hotSpotImage1.jpg; sourceTree = "<group>"; };
+		DB88F61D170079150060A215 /* hotSpotImage2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hotSpotImage2.jpg; path = Resources/images/hotSpotImage2.jpg; sourceTree = "<group>"; };
+		DB88F61E170079150060A215 /* hotSpotImage3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hotSpotImage3.jpg; path = Resources/images/hotSpotImage3.jpg; sourceTree = "<group>"; };
+		DB88F62617008CD80060A215 /* testHotSpot0.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testHotSpot0.gpx; sourceTree = "<group>"; };
+		DB88F62717008CD80060A215 /* testHotSpot1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testHotSpot1.gpx; sourceTree = "<group>"; };
+		DB88F62817008CD80060A215 /* testHotSpot2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testHotSpot2.gpx; sourceTree = "<group>"; };
+		DB88F62917008CD80060A215 /* testHotSpot3.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testHotSpot3.gpx; sourceTree = "<group>"; };
+		DB88F62E170090370060A215 /* hotSpotSound0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hotSpotSound0.mp3; sourceTree = "<group>"; };
+		DB88F62F170090370060A215 /* hotSpotSound1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hotSpotSound1.mp3; sourceTree = "<group>"; };
+		DB88F630170090370060A215 /* hotSpotSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hotSpotSound2.mp3; sourceTree = "<group>"; };
+		DB88F631170090370060A215 /* hotSpotSound3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hotSpotSound3.mp3; sourceTree = "<group>"; };
 		DB8C916216DFD2E2003EC912 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DB947BAD16DE883A001F6687 /* MapBase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB947BB016DE883A001F6687 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -55,8 +83,6 @@
 		DB947BE416DF8BEF001F6687 /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayer.h; sourceTree = "<group>"; };
 		DB947BE516DF8BEF001F6687 /* AudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayer.m; sourceTree = "<group>"; };
 		DB947BE716DF8D35001F6687 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		DB947BEA16DF8DC9001F6687 /* mating.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mating.mp3; sourceTree = "<group>"; };
-		DB947BEB16DF8DC9001F6687 /* singing2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = singing2.mp3; sourceTree = "<group>"; };
 		DB947BF216DFC035001F6687 /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		DB947BF316DFC035001F6687 /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +104,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB88F6161700740B0060A215 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DB88F61B170079150060A215 /* hotSpotImage0.jpg */,
+				DB88F61C170079150060A215 /* hotSpotImage1.jpg */,
+				DB88F61D170079150060A215 /* hotSpotImage2.jpg */,
+				DB88F61E170079150060A215 /* hotSpotImage3.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		DB88F62317008C6B0060A215 /* gpx */ = {
+			isa = PBXGroup;
+			children = (
+				DB88F62617008CD80060A215 /* testHotSpot0.gpx */,
+				DB88F62717008CD80060A215 /* testHotSpot1.gpx */,
+				DB88F62817008CD80060A215 /* testHotSpot2.gpx */,
+				DB88F62917008CD80060A215 /* testHotSpot3.gpx */,
+			);
+			name = gpx;
+			path = Resources/gpx;
+			sourceTree = "<group>";
+		};
 		DB947BA416DE883A001F6687 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +194,11 @@
 			isa = PBXGroup;
 			children = (
 				DB947BDC16DF81D4001F6687 /* plists */,
+				DB88F6161700740B0060A215 /* images */,
 				DB947BDF16DF82E3001F6687 /* sounds */,
+				DB88F62317008C6B0060A215 /* gpx */,
+				DB88F619170074210060A215 /* Icon@2x.png */,
+				DB88F6171700741C0060A215 /* Icon.png */,
 			);
 			name = Resources;
 			path = MapBase;
@@ -155,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				DB947BDA16DF81D0001F6687 /* hotSpots.plist */,
+				DB88F614170064580060A215 /* images.plist */,
 				DB947BDD16DF8203001F6687 /* sounds.plist */,
 			);
 			name = plists;
@@ -163,8 +217,10 @@
 		DB947BDF16DF82E3001F6687 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
-				DB947BEA16DF8DC9001F6687 /* mating.mp3 */,
-				DB947BEB16DF8DC9001F6687 /* singing2.mp3 */,
+				DB88F62E170090370060A215 /* hotSpotSound0.mp3 */,
+				DB88F62F170090370060A215 /* hotSpotSound1.mp3 */,
+				DB88F630170090370060A215 /* hotSpotSound2.mp3 */,
+				DB88F631170090370060A215 /* hotSpotSound3.mp3 */,
 			);
 			name = sounds;
 			path = Resources/sounds;
@@ -229,8 +285,21 @@
 				DB947BCD16DE883A001F6687 /* MainStoryboard_iPad.storyboard in Resources */,
 				DB947BDB16DF81D0001F6687 /* hotSpots.plist in Resources */,
 				DB947BDE16DF8203001F6687 /* sounds.plist in Resources */,
-				DB947BEC16DF8DC9001F6687 /* mating.mp3 in Resources */,
-				DB947BED16DF8DC9001F6687 /* singing2.mp3 in Resources */,
+				DB88F615170064580060A215 /* images.plist in Resources */,
+				DB88F6181700741C0060A215 /* Icon.png in Resources */,
+				DB88F61A170074210060A215 /* Icon@2x.png in Resources */,
+				DB88F61F170079150060A215 /* hotSpotImage0.jpg in Resources */,
+				DB88F620170079150060A215 /* hotSpotImage1.jpg in Resources */,
+				DB88F621170079150060A215 /* hotSpotImage2.jpg in Resources */,
+				DB88F622170079150060A215 /* hotSpotImage3.jpg in Resources */,
+				DB88F62A17008CD80060A215 /* testHotSpot0.gpx in Resources */,
+				DB88F62B17008CD80060A215 /* testHotSpot1.gpx in Resources */,
+				DB88F62C17008CD80060A215 /* testHotSpot2.gpx in Resources */,
+				DB88F62D17008CD80060A215 /* testHotSpot3.gpx in Resources */,
+				DB88F632170090370060A215 /* hotSpotSound0.mp3 in Resources */,
+				DB88F633170090370060A215 /* hotSpotSound1.mp3 in Resources */,
+				DB88F634170090370060A215 /* hotSpotSound2.mp3 in Resources */,
+				DB88F635170090370060A215 /* hotSpotSound3.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

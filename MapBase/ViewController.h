@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btn1;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btn2;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *imageLayer;
 @property (strong, nonatomic) AudioPlayer *currentAudioPlayer;
 
 @end

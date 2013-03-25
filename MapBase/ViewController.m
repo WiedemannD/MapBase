@@ -21,7 +21,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
     /////////////////
     // setup toolbar button
     /////////////////
@@ -31,6 +30,9 @@
     
     self.btn2.target = self;
     self.btn2.action = @selector(btn2Pressed);
+    
+    self.btn3.target = self;
+    self.btn3.action = @selector(btn3Pressed);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -68,10 +70,122 @@
         location.latitude = [(NSNumber *)[spot objectForKey:@"lat"] floatValue];
         location.longitude= [(NSNumber *)[spot objectForKey:@"lon"] floatValue];
         
-        MapAnnotation *anno = [[MapAnnotation alloc] initWithCoordinate:location title:(NSString *)[spot objectForKey:@"title"] subtitle:(NSString *)[spot objectForKey:@"subtitle"] radius:[(NSNumber *)[spot objectForKey:@"radius"] intValue] soundId:[(NSNumber *)[spot objectForKey:@"soundId"] intValue]];
+        MapAnnotation *anno = [[MapAnnotation alloc] initWithCoordinate:location title:(NSString *)[spot objectForKey:@"title"] subtitle:(NSString *)[spot objectForKey:@"subtitle"] radius:[(NSNumber *)[spot objectForKey:@"radius"] intValue] soundId:[(NSNumber *)[spot objectForKey:@"soundId"] intValue] imageId:[(NSNumber *)[spot objectForKey:@"imageId"] intValue]];
         
         [self.mapView addAnnotation:anno];
     }
+}
+
+
+#pragma mark MapBase functions
+
+/////////////////
+// MapBase functions
+/////////////////
+
+- (void)activateMapAnnotation:(MapAnnotation *) anno withDistance:(float) dist
+{
+    /////////////////
+    // !!!!!!!!!!!!!!
+    // THIS WILL GET EXECUTED FOR A HOTSPOT/MAPANNOTATION WHEN THE DEVICE LOCATION IS WITHIN THE CORRESPONDING RADIUS.
+    // PLACE YOU MAPANNOTATION SPECIFIC CODE IN THIS FUNCTION.
+    // !!!!!!!!!!!!!!
+    /////////////////
+    
+    // shows the corresponding image
+    [self showImageLayerWithId:anno.imageId];
+    
+    // plays the corresponding sound
+    [self playSoundWithId:anno.soundId];
+    
+    // Sets MapAnnotation to activated, like this anno won't be activated several times.
+    anno.activated = YES;
+    
+    NSLog(@"HotSpot/MapAnnotation '%@' activated with distance %f", anno.title, dist);
+}
+
+- (void)showImageLayerWithId:(int)imageId
+{
+    NSArray *images = [NSArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/images.plist", [[NSBundle mainBundle] resourcePath]]];
+    
+    if(imageId < images.count)
+    {
+        
+        NSString *filename = [images objectAtIndex:imageId];
+        NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] resourcePath], filename];
+        UIImage *currentImage = [UIImage imageWithContentsOfFile:path];
+       
+        [self.imageLayer setImage:currentImage forState:UIControlStateNormal];
+
+        // The following line sets the imageView to aspect fill the view with image. Comment out if you want the image just to be displayed completely and not cropped if the display is to small.
+        self.imageLayer.imageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+        [UIView beginAnimations:@"showImageLayer" context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        
+        [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:[self.view superview] cache:NO];
+        
+        [self.view exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+        
+        [UIView commitAnimations];
+        
+        NSLog(@"Show image: %@", filename);
+    }
+    else
+    {
+        NSLog(@"Show image failed: imageId is non existent");
+    }
+}
+
+- (IBAction)hideImageLayer:(id)sender
+{
+    [UIView beginAnimations:@"hideImageLayer" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    [UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:[self.view superview] cache:NO];
+    
+    [self.view exchangeSubviewAtIndex:0 withSubviewAtIndex:1];
+    
+    [UIView commitAnimations];
+}
+
+- (void)playSoundWithId:(int)soundId
+{
+    NSArray *sounds = [NSArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/sounds.plist", [[NSBundle mainBundle] resourcePath]]];
+    
+    if(soundId < sounds.count)
+    {
+        
+        NSString *filename = [sounds objectAtIndex:soundId];
+        
+        self.currentAudioPlayer = [[AudioPlayer alloc] initWithPath:filename];
+        [self.currentAudioPlayer play];
+        
+        NSLog(@"Play sound: %@", filename);
+    }
+    else
+    {
+        NSLog(@"Play sound failed: soundId is non existent");
+    }
+}
+
+- (void)resetMapAnnotationsActivated
+{
+    for (int i = 0; i < self.mapView.annotations.count; i++)
+    {
+        MapAnnotation *anno = [self.mapView.annotations objectAtIndex:i];
+        
+        if(![anno.title isEqualToString:@"Current Location"])
+        {
+            anno.activated = NO;
+        }
+    }
+    
+    NSLog(@"Sound played reset");
 }
 
 
@@ -91,15 +205,10 @@
 
         if(![anno.title isEqualToString:@"Current Location"])
         {
-            if(!anno.soundPlayed && dist <= anno.radius / 2)
+            if(!anno.activated && dist <= anno.radius / 2)
             {
-                [self playSoundWithId:anno.soundId];
-                anno.soundPlayed = YES;
-                
-                NSLog(@"dist %@ (soundPlayed %d): %f PLAY SOUND", anno.title, anno.soundPlayed, dist);
+                [self activateMapAnnotation:anno withDistance:dist];
             }
-            
-            //NSLog(@"dist %@ (soundPlayed %d): %f", anno.title, anno.soundPlayed, dist);
         }
     }
 }
@@ -113,50 +222,26 @@
 
 - (void)btn1Pressed
 {
-    NSLog(@"btn1Pressed");
+    NSLog(@"btn1Pressed playSoundWithId:0");
     
-    [self playSoundWithId:1];
+    [self playSoundWithId:0];
 }
 
 - (void)btn2Pressed
 {
-    NSLog(@"btn2Pressed");
+    NSLog(@"btn2Pressed resetMapAnnotationsActivated");
     
-    [self resetSoundPlayed];
+    [self resetMapAnnotationsActivated];
 }
 
-
-#pragma mark sound functions
-
-/////////////////
-// sound functions
-/////////////////
-
-- (void)playSoundWithId:(int)soundId
+- (void)btn3Pressed
 {
-    NSArray *sounds = [NSArray arrayWithContentsOfFile:[NSString stringWithFormat:@"%@/sounds.plist", [[NSBundle mainBundle] resourcePath]]];
-    NSString *filename = [sounds objectAtIndex:soundId];
+    NSLog(@"btn3Pressed showImageLayerWithId");
     
-    self.currentAudioPlayer = [[AudioPlayer alloc] initWithPath:filename];
-    [self.currentAudioPlayer play];
-    
-    NSLog(@"Play sound: %@", filename);
+    [self showImageLayerWithId:0];
 }
 
-- (void)resetSoundPlayed
-{
-    for (int i = 0; i < self.mapView.annotations.count; i++)
-    {
-        MapAnnotation *anno = [self.mapView.annotations objectAtIndex:i];
-        
-        if(![anno.title isEqualToString:@"Current Location"])
-        {
-            anno.soundPlayed = NO;
-        }
-    }
-    
-    NSLog(@"Sound played reset");
-}
+
 
 #pragma mark memory functions
 

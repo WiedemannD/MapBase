@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx version="1.1" creator="Daniel Wiedemann"> 
+  	<metadata>
+		<desc>This is a gpx file to test different positions in XCode</desc>
+  		<author>Daniel Wiedemann</author>
+	</metadata>  
+	
+  	<wpt lat="51.580148" lon="-0.198923">
+		<name>hotSpot</name>
+	</wpt>
+</gpx>
