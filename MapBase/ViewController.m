@@ -202,8 +202,8 @@
         MapAnnotation *anno = [self.mapView.annotations objectAtIndex:i];
         CLLocation *loc = [[CLLocation alloc] initWithLatitude:anno.coordinate.latitude longitude:anno.coordinate.longitude];
         float dist = [newLocation distanceFromLocation:loc];
-
-        if(![anno.title isEqualToString:@"Current Location"])
+        
+        if([anno isKindOfClass:[MapAnnotation class]]) // needed, so you don't test the device location (MKUserLocation and MKTeleportingUserLocation etc.)
         {
             if(!anno.activated && dist <= anno.radius / 2)
             {

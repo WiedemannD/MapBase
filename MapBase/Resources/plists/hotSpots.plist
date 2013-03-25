@@ -15,11 +15,11 @@
 	<array>
 		<dict>
 			<key>lat</key>
-			<real>51.580023</real>
+			<real>51.57996</real>
 			<key>lon</key>
-			<real>-0.198306</real>
+			<real>-0.198569</real>
 			<key>radius</key>
-			<string>30</string>
+			<string>10</string>
 			<key>title</key>
 			<string>Start</string>
 			<key>subtitle</key>
@@ -35,7 +35,7 @@
 			<key>lon</key>
 			<real>-0.198816</real>
 			<key>radius</key>
-			<string>15</string>
+			<string>10</string>
 			<key>title</key>
 			<string>First spot</string>
 			<key>subtitle</key>
@@ -51,7 +51,7 @@
 			<key>lon</key>
 			<real>-0.198923</real>
 			<key>radius</key>
-			<string>15</string>
+			<string>30</string>
 			<key>title</key>
 			<string>Second spot</string>
 			<key>subtitle</key>
