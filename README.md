@@ -23,3 +23,6 @@ Two classes were created:
 - MapAnnotation: a class to hold the different properties defined in hotSpots.plist
 
 Main functions are in ViewController.m.
+
+For a more complete description go to:
+http://mapbase.daniel-wiedemann.de
