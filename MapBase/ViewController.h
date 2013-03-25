@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btn3;
 @property (weak, nonatomic) IBOutlet UIButton *imageLayer;
 @property (strong, nonatomic) AudioPlayer *currentAudioPlayer;
+@property (assign, nonatomic) int lastImageId;
 
 @end

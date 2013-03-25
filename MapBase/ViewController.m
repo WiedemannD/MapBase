@@ -131,6 +131,8 @@
         
         [UIView commitAnimations];
         
+        self.lastImageId = imageId;
+        
         NSLog(@"Show image: %@", filename);
     }
     else
@@ -238,7 +240,14 @@
 {
     NSLog(@"btn3Pressed showImageLayerWithId");
     
-    [self showImageLayerWithId:0];
+    if(self.lastImageId)
+    {
+        [self showImageLayerWithId:self.lastImageId];
+    }
+    else
+    {
+        [self showImageLayerWithId:0];
+    }
 }
 
 
